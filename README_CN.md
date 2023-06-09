@@ -149,3 +149,4 @@ License under BSD 3-clause "New" or "Revised" License
 |<https://github.com/ggong0819/predixy>|[Support Memory/Client Command](https://github.com/joyieldInc/predixy/compare/master...ggong0819:predixy:master)|
 |<https://github.com/mrhein/predixy>|[Add "Time" command](https://github.com/joyieldInc/predixy/compare/master...mrhein:predixy:master)|
 |<https://github.com/huangjiasingle/predixy>|[Add "Keys" command](https://github.com/joyieldInc/predixy/compare/master...huangjiasingle:predixy:master)|
+|<https://github.com/blockmessage/predixy/tree/fix-no-server-connection-available>|[Fix ERR no server connection avaliable](https://github.com/joyieldInc/predixy/compare/master...blockmessage:predixy:fix-no-server-connection-available)|
