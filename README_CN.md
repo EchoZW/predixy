@@ -139,3 +139,10 @@ All rights reserved.
 License under BSD 3-clause "New" or "Revised" License
 
 微信:cppfan ![微信](https://github.com/joyieldInc/predixy/blob/master/doc/wechat-cppfan.jpeg)
+
+
+## 参考 forks 修复 BUG 或添加新功能
+
+|仓库|简要描述|
+|---|---|
+|<https://github.com/chinmaygupta28/predixy>|[When a server is in failed state, script load command should skip that server as well](https://github.com/joyieldInc/predixy/compare/master...chinmaygupta28:predixy:master)|
