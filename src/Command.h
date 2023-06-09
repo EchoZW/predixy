@@ -78,6 +78,7 @@ public:
         TypeCmd,
         Unlink,
         Scan,
+        Keys,
         Append,
         Bitcount,
         Bitfield,

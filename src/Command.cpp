@@ -65,6 +65,7 @@ Command Command::CmdPool[AvailableCommands] = {
     {TypeCmd,           "type",             2,  2,         Read},
     {Unlink,            "unlink",           2,  MaxArgs,   Write|MultiKey},
     {Scan,              "scan",             2,  6,         Read},
+    {Keys,              "keys",             2,  2,         Read},
     {Append,            "append",           3,  3,         Write},
     {Bitcount,          "bitcount",         2,  4,         Read},
     {Bitfield,          "bitfield",         2,  MaxArgs,   Write},
