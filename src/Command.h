@@ -28,6 +28,8 @@ public:
         Select,
         SelectServ,
         Quit,
+        Memory,
+        Client,
 
         SentinelSentinels,
         SentinelGetMaster,

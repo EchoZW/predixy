@@ -21,6 +21,8 @@ Command Command::CmdPool[AvailableCommands] = {
     {Select,            "select",           2,  2,         Read},
     {SelectServ,        "select",           2,  2,         Inner},
     {Quit,              "quit",             1,  MaxArgs,   Read},
+    {Memory,            "memory",           1,  MaxArgs,   Read},
+    {Client,            "client",           1,  MaxArgs,   Read},
     {SentinelSentinels, "sentinel sentinels",3, 3,         Inner},
     {SentinelGetMaster, "sentinel get-m-a..",3, 3,         Inner},
     {SentinelSlaves,    "sentinel slaves",  3,  3,         Inner},
@@ -198,7 +200,7 @@ void Command::addCustomCommand(const CustomCommandConf& ccc) {
         Throw(InitFail, "too many custom commands(>%d)", MaxCustomCommands);
     }
     if (nullptr != find(ccc.name)) {
-        Throw(InitFail, "custom command %s is duplicated", ccc.name.c_str()); 
+        Throw(InitFail, "custom command %s is duplicated", ccc.name.c_str());
     }
     auto* p = &CmdPool[Sentinel];
     p->name = ccc.name.c_str();
@@ -208,4 +210,3 @@ void Command::addCustomCommand(const CustomCommandConf& ccc) {
     p->type = (Command::Type)Sentinel++;
     CmdMap[ccc.name] = p;
 }
-

@@ -146,3 +146,4 @@ License under BSD 3-clause "New" or "Revised" License
 |仓库|简要描述|
 |---|---|
 |<https://github.com/chinmaygupta28/predixy>|[When a server is in failed state, script load command should skip that server as well](https://github.com/joyieldInc/predixy/compare/master...chinmaygupta28:predixy:master)|
+|<https://github.com/ggong0819/predixy>|[Support Memory/Client Command](https://github.com/joyieldInc/predixy/compare/master...ggong0819:predixy:master)|
