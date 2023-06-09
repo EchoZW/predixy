@@ -72,6 +72,7 @@ public:
         Renamenx,
         Restore,
         Sort,
+        Time,
         Touch,
         Ttl,
         TypeCmd,

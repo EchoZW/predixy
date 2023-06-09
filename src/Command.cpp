@@ -59,6 +59,7 @@ Command Command::CmdPool[AvailableCommands] = {
     {Renamenx,          "renamenx",         3,  3,         Write},
     {Restore,           "restore",          4,  5,         Write},
     {Sort,              "sort",             2,  MaxArgs,   Write},
+    {Time,              "time",             1,  1,         Read},
     {Touch,             "touch",            2,  MaxArgs,   Write|MultiKey},
     {Ttl,               "ttl",              2,  2,         Read},
     {TypeCmd,           "type",             2,  2,         Read},
