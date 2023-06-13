@@ -1,6 +1,18 @@
-# Predixy [中文版](https://github.com/joyieldInc/predixy/blob/master/README_CN.md)
+# Predixy [中文版](./README_CN.md)
 
 **Predixy** is a high performance and fully featured proxy for redis sentinel and redis cluster
+
+## Change Log
+
+Refer to forks to fix bugs and add new commands(Memory/Client/Time/Keys)
+
+|GitHub Repository| Commit Message|
+|---|---|
+|[chinmaygupta28/predixy](https://github.com/chinmaygupta28/predixy)|[When a server is in failed state, script load command should skip that server as well](https://github.com/joyieldInc/predixy/compare/master...chinmaygupta28:predixy:master)|
+|[ggong0819/predixy](https://github.com/ggong0819/predixy)|[Support Memory/Client Command](https://github.com/joyieldInc/predixy/compare/master...ggong0819:predixy:master)|
+|[mrhein/predixy](https://github.com/mrhein/predixy)|[Add "Time" command](https://github.com/joyieldInc/predixy/compare/master...mrhein:predixy:master)|
+|[huangjiasingle/predixy](https://github.com/huangjiasingle/predixy)|[Add "Keys" command](https://github.com/joyieldInc/predixy/compare/master...huangjiasingle:predixy:master)|
+|[blockmessage/predixy](https://github.com/blockmessage/predixy/tree/fix-no-server-connection-available)|[Fix ERR no server connection avaliable](https://github.com/joyieldInc/predixy/compare/master...blockmessage:predixy:fix-no-server-connection-available)|
 
 ## Features
 
@@ -78,6 +90,16 @@ So you will look mass log output, but you can still test it with redis-cli.
 More command line arguments:
 
     $ src/predixy -h
+
+## Running With Docker
+
+```bash
+docker run --name predixy -itd \
+    -p 7617:7617 \
+    -v /your/path/predixy/logs/:/var/log/predixy/ \
+    -v /your/path/predixy.conf:/etc/predixy/predixy.conf \
+    docker.io/shilazi/predixy:latest
+```
 
 ## Stats
 

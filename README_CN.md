@@ -1,6 +1,18 @@
-# Predixy
+# Predixy [English](./README.md)
 
 **Predixy** 是一款高性能全特征redis代理，支持redis-sentinel和redis-cluster
+
+## 更新日志
+
+参考 forks 修复 bugs 及添加新 commands（Memory/Client/Time/Keys）
+
+|仓库|简要描述|
+|---|---|
+|[chinmaygupta28/predixy](https://github.com/chinmaygupta28/predixy)|[When a server is in failed state, script load command should skip that server as well](https://github.com/joyieldInc/predixy/compare/master...chinmaygupta28:predixy:master)|
+|[ggong0819/predixy](https://github.com/ggong0819/predixy)|[Support Memory/Client Command](https://github.com/joyieldInc/predixy/compare/master...ggong0819:predixy:master)|
+|[mrhein/predixy](https://github.com/mrhein/predixy)|[Add "Time" command](https://github.com/joyieldInc/predixy/compare/master...mrhein:predixy:master)|
+|[huangjiasingle/predixy](https://github.com/huangjiasingle/predixy)|[Add "Keys" command](https://github.com/joyieldInc/predixy/compare/master...huangjiasingle:predixy:master)|
+|[blockmessage/predixy](https://github.com/blockmessage/predixy/tree/fix-no-server-connection-available)|[Fix ERR no server connection avaliable](https://github.com/joyieldInc/predixy/compare/master...blockmessage:predixy:fix-no-server-connection-available)|
 
 ## 特性
 
@@ -84,6 +96,16 @@ predixy的配置类似redis, 具体配置项的含义在配置文件里有详细
 
     $ src/predixy -h
 
+## 使用 Docker 运行
+
+```bash
+docker run --name predixy -itd \
+    -p 7617:7617 \
+    -v /your/path/predixy/logs/:/var/log/predixy/ \
+    -v /your/path/predixy.conf:/etc/predixy/predixy.conf \
+    docker.io/shilazi/predixy:latest
+```
+
 ## 统计信息
 
 和redis一样，predixy用INFO命令来给出统计信息。
@@ -139,14 +161,3 @@ All rights reserved.
 License under BSD 3-clause "New" or "Revised" License
 
 微信:cppfan ![微信](https://github.com/joyieldInc/predixy/blob/master/doc/wechat-cppfan.jpeg)
-
-
-## 参考 forks 修复 BUG 或添加新功能
-
-|仓库|简要描述|
-|---|---|
-|<https://github.com/chinmaygupta28/predixy>|[When a server is in failed state, script load command should skip that server as well](https://github.com/joyieldInc/predixy/compare/master...chinmaygupta28:predixy:master)|
-|<https://github.com/ggong0819/predixy>|[Support Memory/Client Command](https://github.com/joyieldInc/predixy/compare/master...ggong0819:predixy:master)|
-|<https://github.com/mrhein/predixy>|[Add "Time" command](https://github.com/joyieldInc/predixy/compare/master...mrhein:predixy:master)|
-|<https://github.com/huangjiasingle/predixy>|[Add "Keys" command](https://github.com/joyieldInc/predixy/compare/master...huangjiasingle:predixy:master)|
-|<https://github.com/blockmessage/predixy/tree/fix-no-server-connection-available>|[Fix ERR no server connection avaliable](https://github.com/joyieldInc/predixy/compare/master...blockmessage:predixy:fix-no-server-connection-available)|
