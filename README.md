@@ -101,6 +101,56 @@ docker run --name predixy -itd \
     docker.io/shilazi/predixy:latest
 ```
 
+## Running With Kubernetes
+
+With `livenessProbe` to exec [checkerror.sh](./checkerror.sh), when catch `EventError`, Pod will restart.
+
+![Event](https://s1.locimg.com/2023/06/13/1dd5536b7ea1c.png)
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predixy
+spec:
+  selector:
+    matchLabels:
+      app: predixy
+  template:
+    metadata:
+      labels:
+        app: predixy
+    spec:
+      containers:
+      - image: docker.io/shilazi/predixy:latest
+        name: predixy
+        ports:
+        - containerPort: 7617
+          name: predixy
+        volumeMounts:
+        - mountPath: /etc/predixy/predixy.conf
+          name: configs
+          readOnly: true
+        - mountPath: /var/log/predixy
+          name: logs
+        readinessProbe:
+          tcpSocket:
+            port: predixy
+          initialDelaySeconds: 10
+        livenessProbe:
+          exec:
+            command:
+            - checkerror.sh
+          initialDelaySeconds: 45
+      volumes:
+      - configMap:
+          name: predixy-configs
+        name: configs
+      - persistentVolumeClaim:
+          claimName: predixy-logs
+        name: logs
+```
+
 ## Stats
 
 Like redis, predixy use INFO command to give stats.
