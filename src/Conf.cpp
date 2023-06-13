@@ -76,6 +76,7 @@ static void printHelp(const char* name)
         "   --Bind=addr        set bind address, eg:127.0.0.1:7617, /tmp/predixy\n"
         "   --WorkerThreads=N  set worker threads\n"
         "   --LocalDC=dc       set local dc\n"
+        "   --Log=/dev/stdout  set log output file\n"
         ,name, name, name
         );
 }
@@ -112,6 +113,8 @@ bool Conf::init(int argc, char* argv[])
             mWorkerThreads = atoi(v);
         } else if (char* v = GetVal(argv[i], "--LocalDC=")) {
             mLocalDC = v;
+        } else if (char* v = GetVal(argv[i], "--Log=")) {
+            mLog = v;
         } else {
             printHelp(argv[0]);
             Throw(InvalidStartArg, "invalid argument \"%s\"", argv[i]);
